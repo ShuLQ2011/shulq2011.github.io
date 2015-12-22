@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo搭建静态博客 | Slioe的博客</title>
+  <meta name="author" content="Slioe2011">
+  
+  <meta name="description" content="专注技术 · 专注博客">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Hexo搭建静态博客"/>
+  <meta property="og:site_name" content="Slioe的博客"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/img/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Slioe的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">Slioe的博客</a></h1>
+  <h2><a href="/">Focus make you more successful !</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignright"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title">Hexo搭建静态博客</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。<br><a id="more"></a></p>
+<h2 id="u5B89_u88C5Hexo"><a href="#u5B89_u88C5Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>依次安装</p>
+<ul>
+<li><a href="https://nodejs.org" target="_blank" rel="external">Node.js</a></li>
+<li><a href="http://git-scm.com/" target="_blank" rel="external">Git</a></li>
+</ul>
+<p>Node和Git都安装好后，可执行如下命令安装hexo,在任意地方【右键】→【Git Bash Here】<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo</span><br></pre></td></tr></table></figure></p>
+<p>进入Hexo目录，初始化Hexo<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure></p>
+<p>配置Hexo部署<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: https://github.com/&lt;GitHub名称&gt;/&lt;GitHub名称&gt;.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
+<h2 id="Hexo_u57FA_u672C_u547D_u4EE4"><a href="#Hexo_u57FA_u672C_u547D_u4EE4" class="headerlink" title="Hexo基本命令"></a>Hexo基本命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建新文章</span></span><br><span class="line">hexo n == hexo new</span><br><span class="line"><span class="comment"># 生成静态页面</span></span><br><span class="line">hexo g == hexo generate</span><br><span class="line"><span class="comment"># 开启本地服务器</span></span><br><span class="line">hexo s == hexo server</span><br><span class="line"><span class="comment"># 部署到GitHub</span></span><br><span class="line">hexo d == hexo deploy</span><br></pre></td></tr></table></figure>
+<h2 id="u914D_u7F6ESSH_keys"><a href="#u914D_u7F6ESSH_keys" class="headerlink" title="配置SSH keys"></a>配置SSH keys</h2><p>配置SSH keys远程与GitHub建立联系</p>
+<h3 id="1-__u68C0_u67E5SSH_keys_u662F_u5426_u5B58_u5728"><a href="#1-__u68C0_u67E5SSH_keys_u662F_u5426_u5B58_u5728" class="headerlink" title="1. 检查SSH keys是否存在"></a>1. 检查SSH keys是否存在</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/. ssh</span><br></pre></td></tr></table></figure>
+<p>如果提示：No such file or directory 说明你是第一次使用git</p>
+<h3 id="2-__u751F_u6210_u65B0_u7684SSH_keys"><a href="#2-__u751F_u6210_u65B0_u7684SSH_keys" class="headerlink" title="2. 生成新的SSH keys"></a>2. 生成新的SSH keys</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"邮件地址"</span></span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/your_user_directory/.ssh/id_rsa):&lt;设置key保存的位置，回车使用默认位置&gt;</span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):&lt;输入加密串，部署时的密码验证，可为空&gt;</span><br><span class="line">Enter same passphrase again:&lt;再次输入加密串&gt;</span><br></pre></td></tr></table></figure>
+<p>最后看到这样的界面，就成功设置SSH keys了:<br><img src="/img/ssh_keys_result.png" alt=""></p>
+<h3 id="3-__u6DFB_u52A0SSH_keys_u5230GitHub"><a href="#3-__u6DFB_u52A0SSH_keys_u5230GitHub" class="headerlink" title="3. 添加SSH keys到GitHub"></a>3. 添加SSH keys到GitHub</h3><ol>
+<li>打开本地id_rsa.pub文件，复制文件中的内容。</li>
+<li>登录GitHub，在【头像】→【Settings】→【SSH keys】→【Add SSH key】<br><img src="/img/ssh_keys_added.png" alt=""></li>
+</ol>
+<h3 id="4-__u6D4B_u8BD5"><a href="#4-__u6D4B_u8BD5" class="headerlink" title="4. 测试"></a>4. 测试</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>如果出现如下提示<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Are you sure you want to <span class="built_in">continue</span> connecting (yes/no)?</span><br></pre></td></tr></table></figure></p>
+<p>输入yes就好了。</p>
+<h3 id="5-__u8BBE_u7F6E_u7528_u6237_u4FE1_u606F"><a href="#5-__u8BBE_u7F6E_u7528_u6237_u4FE1_u606F" class="headerlink" title="5. 设置用户信息"></a>5. 设置用户信息</h3><p>在Git命令提示符中输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"&lt;GitHub名称&gt;"</span></span><br><span class="line">$ git config --global user.email  <span class="string">"&lt;GitHub邮箱&gt;"</span></span><br></pre></td></tr></table></figure></p>
+<p>到此博客就搭建完成了。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/Hexo/">Hexo</a>
+  </div>
+
+        
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="http://blog.shulq.com/2015/12/15/Hexo搭建静态博客/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+      
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignleft">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:blog.shulq.com">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Hexo/">Hexo</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+
+  
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 Slioe2011
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
